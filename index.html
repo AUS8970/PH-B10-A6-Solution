@@ -3,97 +3,114 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <title> Assignment 6 </title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
   <script src="https://kit.fontawesome.com/77ba82d986.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-  <title> Assignment 6 </title>
   <style>
+    .category-option .active{
+      border: 2px solid #0E7A81;
+      border-radius: 30px;
+      background-color: #0E7A811A ;
+    }
+    .category-option .not-active{
+      width: 200px;
+      height: 60px;
+      background-color: transparent;
+      color: black;
+      font-size: 1.1rem;
+      padding: 20px 10px;
+      border:  1px solid rgb(209 213 219);
+      border-radius: 10px;
+      display: flex;
+      column-gap: 10px;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      transition: all 130ms;
+    }
   </style>
 </head>
 <body>
   <header class="px-10 py-5">
-    <div class="navbar bg-base-100">
-      <div class="navbar-start">
-        <a class="btn btn-ghost text-2xl"><img src="./images/logo.webp" alt=""> Peddy </a>
+    <div class="flex justify-between">
+      <div class="h-11 w-60 text-base border-none rounded-xl transition-al flex">
+        <a class="flex gap-3 items-center justify-center">
+          <img class="w-6 h-6" src="./images/logo.webp" alt=""> 
+          <h1 class="text-2xl font-bold"> Peddy </h1> </a>
       </div>
-      <div class="navbar-center flex gap-4">
-        <a href=""> <button class="btn btn-ghost"> Home </button> </a>
-        <a href=""> <button class="btn btn-ghost"> Shop </button> </a>
-        <a href=""> <button class="btn btn-ghost"> Contact </button> </a>
+      <div class="md:flex hidden w-60">
+        <a href=""> <button class="h-11 w-20 text-base border-none rounded-xl transition-al hover:bg-slate-100"> Home </button> </a>
+        <a href=""> <button class="h-11 w-20 text-base border-none rounded-xl transition-al hover:bg-slate-100"> Shop </button> </a>
+        <a href=""> <button class="h-11 w-20 text-base border-none rounded-xl transition-al hover:bg-slate-100"> Contact </button> </a>
       </div>
-      <div class="navbar-end">
-        <div class="dropdown dropdown-end">
-          <div class="btn btn-ghost btn-circle">
-            <i class="fa-regular fa-user"></i>
-          </div>
-          <!-- <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
-            <div class="w-10 rounded-full">
-              <img
-                alt="Tailwind CSS Navbar component"
-                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
-            </div>
-          </div>
-          <ul
-            tabindex="0"
-            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-            <li>
-              <a class="justify-between">
-                Profile
-                <span class="badge">New</span>
-              </a>
-            </li>
-            <li><a>Settings</a></li>
-            <li><a>Logout</a></li>
-          </ul> -->
-        </div>
+      <div class="h-11 w-60 text-base border-none rounded-xl transition-al flex items-end justify-end">
+        <i class="fa-regular fa-user h-10 w-10 text-base border-2 border-slate-100 rounded-full transition-al hover:bg-slate-100 flex items-center justify-center"></i>
       </div>
     </div>
-  </header>
-  <main class="px-10 py-5">
     <section class="flex flex-col items-center text-center gap-7 py-7">
       <p class="opacity-70 font-bold"> Bringing Families Together ❤️‍🔥</p>
       <h1 class="text-5xl font-bold"> Your Path to Adoption <br> Starts Here </h1>
       <p class="">It is a long established fact that a reader will be distracted by the readable content of a page when looking <br> at its layout. The point of using Lorem Ipsum is that it has a. </p>
-      <button class="btn bg-cyan-800 text-white"> View More </button>
+      <button class="h-11 w-32 text-base font-bold text-white bg-[#0E7A81] border-none rounded-xl transition-all" onclick="location.href='#main'"> View More </button>
       <div class="">
         <img class="w-full" src="./images/pet.webp" alt="">
       </div>
     </section>
-    <section>
-      <h1 class="text-2xl font-bold"> Adopt  Your  Best Friend </h1>
-      <p class="opacity-80"> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a. </p>
+  </header>
+  <main id="main" class="w-10/12 my-6 mx-auto">
+    <div class="flex flex-col justify-center ">
+      <h2 class="text-center font-bold text-3xl mt-16 mb-3"> Adopt Your Best Friend </h2>
+      <p class="text-center text-base opacity-70"> It is a long established fact that a reader will be distracted by the readable content of a <br> page when looking at its layout. The point of using Lorem Ipsum is that it has a. </p>
+    </div>
+    <div id="category-option" class="category-option"></div>
+    <section class="main-section">
+      <div class="flex justify-between items-center my-5 mx-0 p-3">
+        <h2 class="text-2xl font-bold">Best Deal For you</h2>
+        <button class="h-11 w-40 text-base font-bold text-white bg-[#0E7A81] border-none rounded-xl transition-all" id="sort-by-price" onclick="sortByPrice()">Sort by price</button>
+      </div>
+      <main class="flex w-full items-start justify-between gap-10 md:flex-row flex-col" id="sub-main-section">
+        <div id="categories" class=""></div>
+        <div id="aside" class="aside lg:w-1/4 md:w-1/3 w-full h-fit border bordeer-red rounded-xl grid grid-cols-2 gap-3 p-3"></div>
+      </main>
     </section>
   </main>
-  <footer class="px-10 py-5 bg-black text-white">
-    <div class="">
-      <a class="btn btn-ghost text-2xl"><img src="./images/logo.webp" alt=""> Peddy </a>
-      <p> Location: av. Washington 165, NY CA 54003 <br>
-        Phone: +31 85 964 47 25 <br>
-        Email: info@yourdomain.com <br>
-        Openings hours: 9.00 AM - 5.00 PM</p>
-      <div class="">
-        <div class="btn btn-ghost btn-circle">
-          <i class="fa-brands fa-facebook"></i>
-        </div>
-        <div class="btn btn-ghost btn-circle">
-          <i class="fa-brands fa-instagram"></i>
-        </div>
-        <div class="btn btn-ghost btn-circle">
-          <i class="fa-brands fa-youtube"></i>
-        </div>
-        <div class="btn btn-ghost btn-circle">
-          <i class="fa-brands fa-x-twitter"></i>
-        </div>
-        <button></button>
+  <section id="modal" class="hidden fixed z-10 left-0 top-0 w-full h-full justify-center items-center bg-white bg-opacity-55">
+    <div class="modal-box my-48 bg-white w-4/5 text-center rounded-lg flex m-auto flex-col items-center justify-center max-w-80 p-5">
+      <img src="./images/congrat.gif" class="h-full w-auto mb-3">
+      <p class="text-4xl font-bold mb-1"> Congrates </p>
+      <p class="text-base mb-1"> Adopting Process Start For Your Pet </p>
+      <p id="countDisplay" class="text-3xl font-bold"> 3 </p>
+    </div>
+  </section>
+  <footer class="px-20 py-20 bg-black text-white flex md:flex-row flex-col gap-10 justify-between items-center">
+    <div class="flex flex-col space-y-4 md:items-start items-center md:text-start text-center">
+      <a class="text-3xl font-bold flex gap-2"><img class="w-8 h-8" src="./images/logo.webp" alt=""> Peddy </a>
+      <p> Location: av. Washington 165, NY CA 54003 <br> Phone: +31 85 964 47 25 <br> Email: info@yourdomain.com <br> Openings hours: 9.00 AM - 5.00 PM</p>
+      <div class="flex gap-4">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-youtube"></i>
+        <i class="fa-brands fa-x-twitter"></i>
       </div>
     </div>
-    <div class="">
+    <div class="flex flex-col space-y-2 md:text-left text-center">
+      <h1 class="text-xl font-bold"> Useful Links </h1>
+      <a href=""> <p class="opacity-70"> Home </p> </a>
+      <a href=""> <p class="opacity-70"> About Us </p> </a>
+      <a href=""> <p class="opacity-70"> Animals </p> </a>
+      <a href=""> <p class="opacity-70"> Foundation </p> </a>
+      <a href=""> <p class="opacity-70"> Contact </p> </a>
     </div>
-    <div class=""></div>
+    <div class="flex flex-col space-y-4 items-center md:items-start">
+      <h1 class="text-xl font-bold"> Drop a Message </h1>
+      <input type="email" placeholder="Enter your email" class="bg-[#FFFFFF0D] w-full rounded-xl p-2"/>
+      <button class="bg-cyan-600 text-white w-full rounded-xl p-2"> Subscribe </button>
+    </div>
   </footer>
+  <script src="./index.js"></script>
 </body>
 </html>
